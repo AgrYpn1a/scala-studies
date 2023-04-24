@@ -1,0 +1,106 @@
+#+title: Scala study notes
+
+* Introduction
+** Primitve types
+~Int~, ~String~, ~Char~, ~Boolean~, ~Short~, ~Long~, ~Float~, ~Double~
+
+** Variables
+Variable declaration can be done using ~val~ ...
+
+*** ~val~ - immutable
+~val~ declaration is similar to declaring ~const~ in other languages such as C++.
+Some properties of ~val~:
+- ~val~ is immutable
+- types are optional, this is because compiler can /infer/ the type
+  
+*** ~var~ - mutable
+
+** Side effects
+Declarations with ~var~ allow for side-effects, however in functional programming
+we want to stick to immutability as much as possible as the code becomes more
+clear and easier to read.
+
+This, however, does not throw away immutability for good, since we still need
+our programs to actually /do/ something.
+
+We /should/ be aware of side effects.
+
+Common examples of expressions producing side effects are:
+- ~println()~, ~while~, ~reassignment of vars~ 
+
+** Type inference
+Another neat feature of Scala's compiler is the *type inference*. This allows for compiler to automatically deduce the types of certain expressions such as for example declaration of ~val~:
+#+begin_src scala
+val x = 5
+#+end_src
+
+** Expressions
+Everything in Scala is an expression! (Except for def of vars, classes, packages or similar)
+
+*** if-expressions
+These expressions /always/ return a result. This is unlike in other languages, for example we can do
+#+begin_src scala
+val minValue = if (a < b) a else b
+#+end_src
+which is a rather common approach in functional programming.
+
+*NOTE*: When every expression written in a language produces a value, then we call that style of programming *expression-oriented programming*.
+
+*** Itertate expressions
+We want to avoid using _loops_ such as *for*, *while* in the code. Instead, we prefer more functional oriented approach.
+
+>> Avoid loops like a plague! We do NOT want imperative code!
+
+*** ~Unit~ expressions
+Reasigning a variable in Scala is a side-effect and  side effects in Scala are actually expressions returning (are of type) ~Unit~. Keep in mind these two examples:
+#+begin_src scala
+val aWeirdValue = (aVariable = 3)
+
+var i = 0
+val aWhile = while (i < 10) {
+    println(i)
+    i += 1
+}
+#+end_src
+
+*** Code blocks
+Code blocks are defined and recognised similar as in other languages - ~{}~ denote a code block.
+
+Code blocks have their own scope, it is possible to declare variables inside it and they will remain scoped to that particular block.
+
+>> The value of a /block/ is the value of its /last expression./
+
+
+*** Expressions vs Instructions
+- Instructions are /executed/.
+- Expressions are /evaluated/.
+
+  We'll think in terms of expressions in Scala, unlike, for exapmle, Java or C++.
+
+** Functions
+Calling a function is also an expression!
+
+Parameterless functions can be called with just name.
+#+begin_src scala
+def f(): Int = 22
+println(f)
+#+end_src
+
+Function ~f~ will actually be called, it is not a refenrece to a function in this case!
+
+*NOTE*: When you need loops, use recursion instead!!!
+
+*** Recursion
+In Scala there are two different types of recursion, the usual "Stack recursion" and the Scalish like recursion called "Tail recursion".
+
+_NOTE_: When you need loops, use tail recursion!
+
+**** ~@tailrec~ special annotation for tail recursion
+You can add this special annotation to the function to tell the compiler that it must be tail recursive, otherwise it should fail the compilation. This will help you make sure you wrote a tail recursive function.
+
+
+
+
+
+
+
