@@ -1,0 +1,14 @@
+#+title: OOP Inheritance
+
+* Definitions
+*Subclass* is a class that inherits another class. Usually, any class may have any number of
+subclasses.
+*Superclass* is a parent of a class. It is a class from which the current class inherits. A
+class is usually restricted to having a single superclass (Java, Scala), however in some
+languages that support the multiple inheritance this is not the case (C++).
+* Inheritance
+* Multiple inheritance
+** Problems of multiple inheritance
+*** Constructor calling
+** In C++
+** In Scala

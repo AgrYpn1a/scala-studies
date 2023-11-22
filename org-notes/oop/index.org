@@ -1,0 +1,45 @@
+#+title: OOP
+
+* Core concepts of OOP
+** Encapsulation
+*Encapsulation* is a mechanism of hiding the state of a class that should not be
+modified by external factors. Instead, a public interface is provided that
+allows access to read or/and write access to desired members.
+*** Why
+In order to instruct future users of the class we encapsulate the data and
+provide publicly accessible methods that allow us to work with the class in the
+most proper way, the way it is intended by the creator of the class. This way we
+make sure that the class is used in such a way that its state is always correct.
+*** Encapsulation in Scala
+Unlike in Java or C++ in Scala we can achieve encapsulation and controlled
+access with a very few lines of code, that is, in the definiton of a class
+itself
+#+begin_src scala
+package oop.encapsulation
+
+class Person(var firstName: String, private var lastName: String, val age: Int) {
+  override def toString() =
+    s"${this.firstName} ${this.lastName} aged ${this.age}"
+}
+
+object Encapsulation extends App {
+  val person = new Person("John", "Doe", 24)
+
+  person.firstName = "Jane"
+  person.lastName = "Doue"
+  person.age = 27
+}
+#+end_src
+hence we consider scala very expressive and concise language.
+
+The access to `lastName` is forbidden because it is *private* and the `age` cannot
+be modified since we cannot reasign to *val*, thus we have covered pretty much all
+the concepts of encapsulation. In other languages the same would require quite
+some additional code.
+** Inheritance
+*** Why
+** Abstraction
+*** Why
+** Polymorphism
+*** Why
+

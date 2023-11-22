@@ -1,3 +1,3 @@
-ThisBuild / scalaVersion := "2.13.8"
-ThisBuild / version := "1.0"
-ThisBuild / name := "udemy-scala-essentials"
+scalaVersion := "2.13.8"
+version := "1.0"
+name := "udemy-scala-essentials"
