@@ -32,7 +32,7 @@ object Encapsulation extends App {
 #+end_src
 hence we consider scala very expressive and concise language.
 
-The access to `lastName` is forbidden because it is *private* and the `age` cannot
+The access to ~lastName~ is forbidden because it is *private* and the ~age~ cannot
 be modified since we cannot reasign to *val*, thus we have covered pretty much all
 the concepts of encapsulation. In other languages the same would require quite
 some additional code.
