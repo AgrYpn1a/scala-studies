@@ -1,14 +1,46 @@
 #+title: OOP Inheritance
 
 * Definitions
-*Subclass* is a class that inherits another class. Usually, any class may have any number of
+** Subclass
+is a class that inherits another class. Usually, any class may have any number of
 subclasses.
-*Superclass* is a parent of a class. It is a class from which the current class inherits. A
+** Superclass
+is a parent of a class. It is a class from which the current class inherits. A
 class is usually restricted to having a single superclass (Java, Scala), however in some
 languages that support the multiple inheritance this is not the case (C++).
+** Instance or object
+Is an example of a class with its own concrete data.
+** Instance variable
+is a special name given to the data which is held by an object (instance). The
+*state* of an object at any particular moment related to the current values held
+by its instance variables.
 * Inheritance
+Inheritance is the key element that makes an object-oriented language more than
+a object-based language.
+
+Inheritance allows for [[file:polymorphism.org][polymorphism]].
+
+The default inheritance is considered to be a *single inheritance*, meaning that a
+class may only have a single superclass. Scala uses this system.
 * Multiple inheritance
+This system of inheritance allows a class to be able to inherit from one or more
+classes. An example of such a language is C++.
 ** Problems of multiple inheritance
 *** Constructor calling
 ** In C++
 ** In Scala
+* Types of hierarchy
+In most oo languages there are two types of hierarchy:
+** Ineritance
+Inhertiance relates to classes (also called *extends* hierarchy) and how they
+inherit features from a superclass.
+** Instantiation
+Instantiation hierarchy relates to instances rather than classes and is
+important during the execution of the object. There are two types of instance
+hierarchy:
+1) One indicates a *part-of* relationship
+2) Another refers to *is-a* relationship
+** Example
+Consider the classes Student, Person, Car, Engine. The relationships can be defined as:
+- Student is-a Person
+- Engine is part-of Car

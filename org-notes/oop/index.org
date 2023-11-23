@@ -1,6 +1,10 @@
 #+title: OOP
 
 * Core concepts of OOP
+** Object-oriented vs object-based
+While a language may be object-based (that is, have a concept of objects) it may
+not be object-oriented. One such language is JavaScript - it provides a concept
+of objects, but does not provide the concepts of OOP.
 ** Encapsulation
 *Encapsulation* is a mechanism of hiding the state of a class that should not be
 modified by external factors. Instead, a public interface is provided that
@@ -36,10 +40,35 @@ The access to ~lastName~ is forbidden because it is *private* and the ~age~ cann
 be modified since we cannot reasign to *val*, thus we have covered pretty much all
 the concepts of encapsulation. In other languages the same would require quite
 some additional code.
+*** Encapsulation in Scala in practice
+In real life...
 ** Inheritance
 *** Why
 ** Abstraction
 *** Why
 ** Polymorphism
 *** Why
+* Structuring the data and operations
+** Packages
+The package construct provides a way to group the data structure with its
+associated functions. It also supports hiding the data, we can have *private*
+parts of a package.
+*** Problems
+- Packages usually tend to be larger units than classes. They are not used to
+encapsulate a single small concept such as class ~String~ or ~Date~ or similar, but
+rather a whole set of related concepts.
+- Packages still provide relatively loose association between the data and the
+  procedures.
+- Data is still held separately, so anyone can modify it directly without the
+  need to use the intended defined procedures.
+** Object orientation
+Code is organised in classes instead of packages which provide a finer level of granularity.
+*** Advantages over packages
+- A class, in contrast, tends to more closely relate data and methods in a single
+concept.
+- When accessing the methods, we no longer need to provide the data object (we
+  have a reference to a class object instead) which means that we do not have
+  access to the *raw data* anymore, which prevents a user from missusing and
+  corrupting the data. Nothing outside the object may access the data within the
+  object.
 
