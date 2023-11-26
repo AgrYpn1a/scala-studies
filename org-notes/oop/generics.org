@@ -1,0 +1,8 @@
+#+title: Generics
+* Generics in Scala
+** Variances
+*** Covariant
+*** Invariant
+*** Contravariant
+** Bounded types
+They help us solve variance problems.

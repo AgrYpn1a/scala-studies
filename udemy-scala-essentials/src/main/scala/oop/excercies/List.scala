@@ -13,7 +13,7 @@ import scala.annotation.tailrec
  */
 
 /*
- * Implementation by Rastko, first try.
+ * Implementation by Rastko.
  */
 class Node(val value: Int, val next: Node)
 class MyList(val root: Node = null) {
@@ -47,7 +47,6 @@ class MyList(val root: Node = null) {
 /*
  * Implementation from the course, the correct way
  */
-
 abstract class AList {
   def head: Int
   def tail: AList
